@@ -1,98 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>United Pharma Consulting</title>
-  <meta name="description" content="استشارات تطوير المنتجات الدوائية والتجميلية - خبرة 15 سنة">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="استشارات تطوير المنتجات الدوائية والتجميلية، حلول التعبئة والتغليف، ودعم الجودة والتصنيع بخبرة عملية." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Cairo',sans-serif;background:#f4f7fb;color:#222}
-    header{background:linear-gradient(135deg,#0a3d62,#1e3799);color:#fff;padding:60px 20px;text-align:center}
-    header h1{font-size:32px;margin-bottom:10px}
-    header p{font-size:18px;margin-bottom:20px}
-    .btn{background:#00a8ff;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:bold;display:inline-block}
-    nav{background:#082c44;padding:12px;text-align:center}
-    nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:600}
-    section{padding:50px 20px;max-width:1100px;margin:auto}
-    h2{margin-bottom:20px;color:#0a3d62}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .card{background:#fff;border-radius:15px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05)}
-    .card img{width:100%;border-radius:10px;margin-bottom:10px}
-    footer{background:#082c44;color:#fff;text-align:center;padding:20px;margin-top:40px}
-    .whatsapp{position:fixed;left:20px;background:#25D366;color:#fff;padding:12px 15px;border-radius:30px;text-decoration:none;font-size:14px}
-    .whatsapp:hover{opacity:0.9}
-    form input, form textarea{width:100%;padding:10px;margin:10px 0;border-radius:8px;border:1px solid #ccc}
-    form button{background:#0a3d62;color:#fff;border:none;padding:12px;border-radius:8px;width:100%;font-size:16px}
+    :root{
+      --ink:#13252c;
+      --muted:#63757c;
+      --paper:#f5f8f7;
+      --white:#fff;
+      --navy:#083248;
+      --blue:#1663a6;
+      --teal:#008b8e;
+      --green:#27a36a;
+      --gold:#d4a63d;
+      --line:rgba(19,37,44,.12);
+      --shadow:0 22px 55px rgba(19,37,44,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Cairo",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:var(--navy);color:rgba(255,255,255,.86);padding:8px 20px;font-size:14px}
+    .topbar-inner{max-width:1180px;margin:auto;display:flex;gap:18px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .navbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand-mark{display:grid;place-items:center;width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff;font-size:20px}
+    .brand small{display:block;color:var(--muted);font-size:12px;line-height:1.2}
+    nav{display:flex;gap:20px;align-items:center;font-weight:700}
+    nav a{color:var(--navy)}
+    .menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 12px;font-weight:800}
+    .hero{position:relative;min-height:620px;display:grid;align-items:center;overflow:hidden;color:#fff;background:linear-gradient(135deg,rgba(8,50,72,.96),rgba(0,139,142,.76)),url("https://images.unsplash.com/photo-1581093458791-9d15482442f6?auto=format&fit=crop&w=1800&q=85") center/cover}
+    .hero-inner{max-width:1180px;margin:auto;width:100%;padding:90px 20px 120px}
+    .hero-content{max-width:760px}
+    .eyebrow{margin:0 0 10px;color:var(--gold);font-weight:800;font-size:13px;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(34px,6vw,68px);line-height:1.08;margin-bottom:18px}
+    h2{font-size:clamp(26px,3vw,42px);line-height:1.2;margin-bottom:14px;color:var(--navy)}
+    h3{font-size:20px;margin-bottom:8px;color:var(--navy)}
+    .hero p{font-size:19px;color:rgba(255,255,255,.86);max-width:720px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;border-radius:8px;padding:10px 20px;font-weight:800;border:1px solid transparent;cursor:pointer}
+    .btn.primary{background:var(--gold);color:#1b262a}
+    .btn.secondary{border-color:rgba(255,255,255,.42);color:#fff;background:rgba(255,255,255,.08)}
+    .hero-stats{position:absolute;right:50%;transform:translateX(50%);bottom:24px;width:min(1140px,calc(100% - 40px));display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-stats div{background:rgba(255,255,255,.94);color:var(--ink);padding:18px}
+    .hero-stats strong{display:block;font-size:28px;line-height:1;color:var(--blue)}
+    .hero-stats span{font-size:14px;color:var(--muted)}
+    section{padding:78px 20px}
+    .container{max-width:1180px;margin:auto}
+    .section-head{max-width:760px;margin-bottom:30px}
+    .section-head p,.lead{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:0 12px 32px rgba(19,37,44,.06)}
+    .card img{width:100%;height:210px;object-fit:cover;border-radius:8px;margin-bottom:16px}
+    .badge{display:inline-flex;margin-bottom:12px;border-radius:999px;padding:5px 12px;background:#e8f5f1;color:var(--teal);font-weight:800;font-size:13px}
+    .dark{background:var(--navy);color:#fff}
+    .dark h2,.dark h3{color:#fff}
+    .dark .section-head p,.dark .card p{color:rgba(255,255,255,.74)}
+    .dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);box-shadow:none}
+    .packaging{background:#fff}
+    .packaging-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:34px;align-items:start}
+    .packaging-panel{border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+    .packaging-panel img{width:100%;height:520px;object-fit:cover}
+    .feature-list{display:grid;gap:12px;margin-top:22px}
+    .feature{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px}
+    .check{display:grid;place-items:center;min-width:30px;height:30px;border-radius:8px;background:var(--green);color:#fff;font-weight:800}
+    .work-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
+    .step strong{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--blue);color:#fff;margin-bottom:14px}
+    .consult{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+    form{display:grid;gap:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:var(--shadow)}
+    input,textarea,select{width:100%;border:1px solid var(--line);border-radius:8px;padding:12px 14px;font:inherit;outline:none;background:#fbfdfc}
+    textarea{min-height:120px;resize:vertical}
+    input:focus,textarea:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(0,139,142,.12)}
+    form button{border:0;background:var(--navy);color:#fff}
+    footer{background:#061f2d;color:#fff;padding:34px 20px}
+    .footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner p{margin:6px 0;color:rgba(255,255,255,.72)}
+    .whatsapp{position:fixed;left:18px;z-index:20;display:flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:11px 15px;border-radius:999px;font-size:14px;font-weight:800;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+    .sales{bottom:20px}
+    .support{bottom:72px;background:#128c7e}
+    @media(max-width:900px){
+      nav{display:none;position:absolute;top:74px;left:20px;right:20px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;box-shadow:var(--shadow)}
+      nav.open{display:grid}
+      .menu-btn{display:inline-flex}
+      .hero-stats,.grid,.packaging-layout,.work-steps,.consult{grid-template-columns:1fr}
+      .hero{min-height:760px}
+      .hero-stats{position:static;transform:none;margin:20px auto 0;width:calc(100% - 40px)}
+      .hero-inner{padding-bottom:30px}
+      .packaging-panel img{height:340px}
+    }
+    @media(max-width:560px){
+      .topbar-inner,.nav-inner,.footer-inner{align-items:flex-start}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      section{padding:58px 18px}
+      .whatsapp{left:12px;font-size:12px;padding:10px 12px}
+    }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>حلول احترافية لتطوير المنتجات الدوائية والتجميلية</h1>
-  <p>خبرة 15 سنة في الجودة والتطوير والتعبئة والتغليف</p>
-  <a class="btn" href="#consult">احجز استشارة الآن</a>
-</header>
-
-<nav>
-  <a href="#products">المنتجات</a>
-  <a href="#services">الخدمات</a>
-  <a href="#about">من نحن</a>
-  <a href="#consult">استشارة</a>
-</nav>
-
-<section id="products">
-  <h2>المنتجات</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
-      <h3>مواد تعبئة وتغليف</h3>
-      <p>كبسولات صلبة فارغة</p>
-      <a class="btn" href="https://wa.me/201004941325" target="_blank">استفسر</a>
-    </div>
-    <div class="card">
-     <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a">
-      <h3>سيروم شعر</h3>
-      <p>تقوية الشعر وتقليل التساقط بنتائج فعالة</p>
-      <a class="btn" href="https://wa.me/201003160866" target="_blank">استفسر</a>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>خبرة في تطوير المنتجات الدوائية والتجميلية والتعبئة والتغليف</span>
+      <span>Sales: +20 100 494 1325 | Support: +20 100 316 0866</span>
     </div>
   </div>
-</section>
 
-<section id="services">
-  <h2>خدماتنا</h2>
-  <div class="grid">
-    <div class="card">✔ تطوير المنتجات</div>
-    <div class="card">✔ استشارات التعبئة والتغليف</div>
-    <div class="card">✔ حل مشاكل الثبات</div>
-    <div class="card">✔ Compatibility</div>
-  </div>
-</section>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark">U</span>
+        <span>United Pharma Consulting<small>Pharma, Cosmetics & Packaging</small></span>
+      </a>
+      <button class="menu-btn" type="button" id="menuBtn">القائمة</button>
+      <nav id="navMenu">
+        <a href="#products">المنتجات</a>
+        <a href="#packaging">التعبئة والتغليف</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">طريقة الشغل</a>
+        <a href="#consult">استشارة</a>
+      </nav>
+    </div>
+  </header>
 
-<section id="about">
-  <h2>من نحن</h2>
-  <p>خبرة أكثر من 15 سنة في الصناعات الدوائية ومستحضرات التجميل</p>
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">United Pharma Consulting</p>
+          <h1>حلول احترافية لتطوير المنتجات الدوائية والتجميلية</h1>
+          <p>نساعدك في تحويل فكرة المنتج إلى تركيبة قابلة للتصنيع، مع اختيار خامات مناسبة، حلول تعبئة وتغليف، ومتابعة جودة تقلل الهدر وتسرع دخول السوق.</p>
+          <div class="actions">
+            <a class="btn primary" href="#consult">احجز استشارة الآن</a>
+            <a class="btn secondary" href="#packaging">حلول التعبئة والتغليف</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div><strong>15+</strong><span>سنة خبرة عملية</span></div>
+        <div><strong>4</strong><span>مجالات دعم رئيسية</span></div>
+        <div><strong>2</strong><span>قنوات تواصل مباشرة</span></div>
+        <div><strong>100%</strong><span>حلول قابلة للتنفيذ</span></div>
+      </div>
+    </section>
 
-<section id="consult">
-  <h2>احجز استشارة</h2>
-  <form action="https://formspree.io/f/mpqkvwvr" method="POST">
-    <input type="text" name="name" placeholder="الاسم" required>
-    <input type="text" name="phone" placeholder="رقم واتساب" required>
-    <input type="text" name="product" placeholder="نوع المنتج">
-    <textarea name="message" placeholder="اكتب مشكلتك"></textarea>
-    <button type="submit">إرسال</button>
-  </form>
-</section>
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Products & Development</p>
+          <h2>منتجات نساعدك في تطويرها وتجهيزها للسوق</h2>
+          <p>سواء كان المنتج دوائيًا، تجميليًا، أو مكملًا، نراجع الفكرة والتركيبة والتعبئة وطريقة العرض لتخرج بشكل مهني قابل للتصنيع.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=85" alt="منتجات عناية بالبشرة" />
+            <span class="badge">Cosmetics</span>
+            <h3>كريمات وسيرومات</h3>
+            <p>تطوير تركيبات للعناية بالبشرة والشعر مع مراجعة الثبات والتوافق مع العبوة.</p>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=85" alt="منتجات دوائية" />
+            <span class="badge">Pharma</span>
+            <h3>مستحضرات دوائية</h3>
+            <p>دعم فني في اختيار الشكل الصيدلي، المواد المساعدة، ومتطلبات التصنيع والجودة.</p>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85" alt="مكملات غذائية" />
+            <span class="badge">Supplements</span>
+            <h3>مكملات ومنتجات صحية</h3>
+            <p>مراجعة المكونات، الجرعات، شكل العبوة، ورسائل المنتج بما يناسب السوق المستهدف.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- WhatsApp Buttons -->
-<a class="whatsapp" style="bottom:20px;" href="https://wa.me/201004941325" target="_blank">💬 Sales</a>
-<a class="whatsapp" style="bottom:70px;" href="https://wa.me/201003160866" target="_blank">💬 Support</a>
+    <section class="packaging" id="packaging">
+      <div class="container packaging-layout">
+        <div class="packaging-panel">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85" alt="خط تعبئة وتغليف احترافي" />
+        </div>
+        <div>
+          <p class="eyebrow">Packaging & Filling</p>
+          <h2>قسم متخصص للتعبئة والتغليف واختيار العبوة المناسبة</h2>
+          <p class="lead">التعبئة ليست شكلًا فقط. العبوة تؤثر على ثبات المنتج، تكلفة الإنتاج، سهولة الاستخدام، صورة البراند، وقابلية النقل والتخزين.</p>
+          <div class="feature-list">
+            <div class="feature"><span class="check">✓</span><div><h3>اختيار العبوة</h3><p>زجاج، بلاستيك، أنابيب، برطمانات، عبوات مضخة، قطارات، أو Blister حسب طبيعة المنتج.</p></div></div>
+            <div class="feature"><span class="check">✓</span><div><h3>توافق المنتج مع العبوة</h3><p>مراجعة احتمالات التفاعل، التسريب، تغير اللون، الرائحة، اللزوجة، أو امتصاص المواد الفعالة.</p></div></div>
+            <div class="feature"><span class="check">✓</span><div><h3>تصميم الملصق والكرتونة</h3><p>تنظيم البيانات الأساسية، تعليمات الاستخدام، التحذيرات، الباركود، ومظهر المنتج على الرف.</p></div></div>
+            <div class="feature"><span class="check">✓</span><div><h3>حل مشاكل خطوط التعبئة</h3><p>تقليل الفاقد، تحسين سرعة التعبئة، ضبط الوزن أو الحجم، ومراجعة الغلق النهائي.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2026 United Pharma Consulting</p>
-</footer>
+    <section class="dark" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>خدماتنا الأساسية</h2>
+          <p>نقدم دعمًا عمليًا للشركات والمصانع وأصحاب البراندات في مراحل التطوير، الجودة، التعبئة، وحل المشاكل الفنية.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>تطوير المنتجات</h3><p>تحسين التركيبة، اختيار الخامات، ومراجعة قابلية التصنيع.</p></article>
+          <article class="card"><h3>استشارات التعبئة والتغليف</h3><p>اختيار العبوة المناسبة، مراجعة التوافق، وتقليل مشاكل التسريب والتلف.</p></article>
+          <article class="card"><h3>حل مشاكل الثبات</h3><p>تحليل أسباب الفصل، تغير اللون، الرائحة، القوام، أو انخفاض الفاعلية.</p></article>
+          <article class="card"><h3>Compatibility</h3><p>مراجعة توافق المنتج مع العبوة والخامات وظروف التخزين.</p></article>
+          <article class="card"><h3>Quality Support</h3><p>دعم إجراءات الجودة، نقاط الفحص، وتوثيق الملاحظات الفنية.</p></article>
+          <article class="card"><h3>Market Readiness</h3><p>تجهيز المنتج للعرض والبيع بمظهر مهني ورسائل واضحة.</p></article>
+        </div>
+      </div>
+    </section>
 
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How we work</p>
+          <h2>طريقة الشغل من الفكرة إلى منتج جاهز</h2>
+        </div>
+        <div class="work-steps">
+          <div class="step"><strong>1</strong><h3>تحليل الطلب</h3><p>نراجع نوع المنتج، السوق المستهدف، الميزانية، والمشكلة الفنية.</p></div>
+          <div class="step"><strong>2</strong><h3>خطة تطوير</h3><p>نحدد خطوات التركيبة، الاختبارات، والعبوة المقترحة.</p></div>
+          <div class="step"><strong>3</strong><h3>تجارب ومراجعة</h3><p>نساعد في تقييم النتائج وتحسين المنتج قبل الإنتاج.</p></div>
+          <div class="step"><strong>4</strong><h3>تجهيز السوق</h3><p>نراجع الشكل النهائي، التغليف، وطريقة تقديم المنتج للعملاء.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="packaging" id="consult">
+      <div class="container consult">
+        <div>
+          <p class="eyebrow">Book a consultation</p>
+          <h2>احجز استشارة فنية</h2>
+          <p class="lead">اكتب نوع المنتج أو المشكلة التي تواجهك، وسيتم التواصل معك عبر القنوات الحالية لمراجعة التفاصيل وتحديد الخطوة المناسبة.</p>
+          <p><strong>Sales:</strong> +20 100 494 1325</p>
+          <p><strong>Support:</strong> +20 100 316 0866</p>
+        </div>
+        <form action="https://formspree.io/f/mpqkvwvr" method="POST">
+          <input type="text" name="name" placeholder="الاسم" required />
+          <input type="text" name="phone" placeholder="رقم واتساب" required />
+          <select name="service" required>
+            <option value="">اختر نوع الخدمة</option>
+            <option>تطوير منتج</option>
+            <option>تعبئة وتغليف</option>
+            <option>مشكلة ثبات</option>
+            <option>مراجعة عبوة أو ليبل</option>
+          </select>
+          <input type="text" name="product" placeholder="نوع المنتج" />
+          <textarea name="message" placeholder="اكتب مشكلتك أو تفاصيل الطلب"></textarea>
+          <button class="btn" type="submit">إرسال الطلب</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp sales" href="https://wa.me/201004941325" target="_blank" rel="noopener">Sales واتساب</a>
+  <a class="whatsapp support" href="https://wa.me/201003160866" target="_blank" rel="noopener">Support واتساب</a>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>United Pharma Consulting</strong>
+        <p>استشارات تطوير المنتجات الدوائية والتجميلية والتعبئة والتغليف.</p>
+      </div>
+      <div>
+        <p>© 2026 United Pharma Consulting</p>
+        <p>Sales: +20 100 494 1325 | Support: +20 100 316 0866</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+    menuBtn.addEventListener("click", () => navMenu.classList.toggle("open"));
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navMenu.classList.remove("open"));
+    });
+  </script>
 </body>
 </html>
